@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/golang:1.15
         auth:
-          username: singharunk
+          username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
@@ -15,5 +15,5 @@ jobs:
       # build and push Docker image
       - run: |
           docker build -t singharunk/dev:latest .
-          docker login -u singharunk -p $DOCKER_PASS
+          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
           docker push singharunk/dev:latest:latest
