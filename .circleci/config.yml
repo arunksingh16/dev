@@ -16,4 +16,4 @@ jobs:
       - run: |
           docker build -t singharunk/dev:latest .
           docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-          docker push singharunk/dev:latest:latest
+          docker push singharunk/dev:latest
