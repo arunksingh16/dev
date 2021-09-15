@@ -15,5 +15,5 @@ jobs:
       # build and push Docker image
       - run: |
           docker build -t singharunk/dev:latest .
-          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          docker login -u singharunk -p $DOCKER_PASS
           docker push singharunk/dev:latest:latest
