@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     gnupg2 \
     lsb-release \
     ca-certificates \
+    git \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
