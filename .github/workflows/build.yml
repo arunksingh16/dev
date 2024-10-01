@@ -32,10 +32,3 @@ jobs:
           file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/dev:latest
-
-
-      - name: Generate list using Markdown
-        run: |
-          echo "Image Building Status" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY # blank line
-          echo "- Image Published: singharunk/dev:latest >> $GITHUB_STEP_SUMMARY
