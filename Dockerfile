@@ -39,15 +39,7 @@ RUN curl -LO https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz && \
     mv linux-amd64/helm /usr/local/bin/ && \
     rm -rf helm-${HELM_VERSION}-linux-amd64.tar.gz linux-amd64
 
-# Verify installations
-RUN aws --version && \
-    terraform --version && \
-    kubectl version --client && \
-    helm version
-
 # Set the entrypoint to bash for interactive shell
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
 
-USER root
-WORKDIR /root
-CMD ["bash"]
+CMD ["/bin/bash"]
