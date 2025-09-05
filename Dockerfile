@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     ca-certificates \
     git \
+    cifs-utils \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
